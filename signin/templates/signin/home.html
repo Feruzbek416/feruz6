@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    {% for message in messages %}
+    <h1>{{messages.tags}}</h1>
+    <button type="button"></button>
+    <strong>{{message}}</strong>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+    <button type="submit"><a href="{% url 'signout' %}">Sign Out</a></button>
+    {% else %}
+    <button type="submit"><a href="{% url 'signin' %}">Sign in</a></button>
+    <button type="submit"><a href="{% url 'signup' %}">Sign up</a></button>
+    {% endif %}
+    
+    
+    
+    <h1>Sherabot sheraa</h1>
+  </body>
+</html>
